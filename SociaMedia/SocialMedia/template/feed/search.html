@@ -1,0 +1,18 @@
+{% extends 'feed/landing.html' %}
+
+{% block content %}
+<div class='container'>
+    {% for profile in profile  %}
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-5 col-sm-12 border-bottom position-relative">
+            <P><a style="text-decoration: none;" class="text-primary"
+                 href="{% url 'profile' profile.pk %}">@{{ profile.user }}</a></P>
+                 {% if profile.bio %}
+                 <p>{{ profile.bio }}</p>
+                {% endif %}
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

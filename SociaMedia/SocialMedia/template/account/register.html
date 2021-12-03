@@ -1,0 +1,32 @@
+{% extends 'account/boot.html'  %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container py-5">
+	<h1>Register</h1>
+  
+  <form method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+      {{form | crispy}} 
+      {{form.username.as_p}} 
+      {{form.email.as_p}} 
+      {{form.password1.as_p}} 
+      {{form.password2.as_p}} 
+
+    </div>
+    <button class="btn btn-primary" type="submit">Register</button>
+    
+</form>
+</div>
+
+<div class="text-center">Exiting user , plz click here to LOGIN <a href="login_request"><button>login_request</button></a>.</div>
+
+
+{% endblock %}
+<!-- 
+<form method="POST" action="">
+  {% csrf_token %}
+  {{ form }}      
+  <button class="btn btn-primary" type="submit">Register</button>
+</form>  -->

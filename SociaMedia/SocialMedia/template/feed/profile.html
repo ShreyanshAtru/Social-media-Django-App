@@ -1,0 +1,60 @@
+
+{% extends 'feed/landing.html' %}
+{% block content %}
+<div class = "container">
+
+    <div class = "row  mt-5">
+        <div class="col-md-3 col-sm-6">
+           <a href="{% url 'post-list' %}" class = "btn btn-light">back to feed</a>
+            </div>
+   </div>
+
+   <div class = "row justify-content-center mt-3">
+    <div class="card shadow-sm col-md-8 col-sm-12 border-bottom px-5 pt-3">
+        <img src="{{ profile.image.url }}" class="round-cricle" width="250" height="200" />
+        {% if profile.name %}
+        <h3 class="py-4">{{ profile.user.name }}
+            <span>
+                {% if request.user == user %}
+                    <a href="{% url 'profile-edit' profile.pk %}" style="color: #333"><i class="far fa-edit"> update profile</i></a>
+                {% endif %}
+            </span>
+            {% else %}
+            <h3 class="py-4">{{ user.username }}
+                <span>
+                    {% if request.user == user %}
+                        <a href="{% url 'profile-edit' profile.pk %}" style="color: #333"><i class="far fa-edit"></i></a>
+                    {% endif %}
+                </span>
+            </h3>
+            {% endif %}
+        </h3>
+
+        {% if profile.name %}
+        <p class="py-4"><h5>{{ profile.name }}</h5></p>
+        {% endif %}
+
+        {% if profile.birth_date %}
+        <p class="py-4">{{ profile.bio }}</p>
+        {% endif %}
+
+        {% if profile.birth_date %}
+        <p class="py-4">{{ profile.birth_date }}</p>
+        {% endif %}
+
+    
+    </div>
+    </div>
+
+
+    {% for post in post_list %}
+    <div class = "row justify-content-center mt-3">
+        <div class="col-md-8 col-sm-12 border-bottom position-relative">
+           <p><strong> {{ post.author }}</strong>{{post.created_on}}</p>
+           <P>{{ post.body }}</P>
+           <a href="{% url 'post-detail' post.pk %}" class="stretched-link"></a>
+        </div>
+   </div>
+   {% endfor %}
+</div>
+{% endblock %}
