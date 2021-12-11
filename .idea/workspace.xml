@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="648382fd-0b55-464d-926b-7c336cb46e48" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/feed/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/feed/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/feed/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/feed/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/feed/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/feed/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/login/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/login/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/login/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/login/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/login/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/login/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/template/feed/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/template/feed/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/template/feed/post_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/template/feed/post_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/template/feed/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/template/feed/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/template/feed/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/template/feed/search.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/SociaMedia/SocialMedia/template/feed/search.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SociaMedia/SocialMedia/template/account/send_friend.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SociaMedia/SocialMedia/feed/urls.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SociaMedia/SocialMedia/feed/views.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SociaMedia/SocialMedia/login/admin.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SociaMedia/SocialMedia/template/account/friends.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SociaMedia/SocialMedia/login/models.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SociaMedia/SocialMedia/login/urls.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SociaMedia/SocialMedia/template/feed/profile.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SociaMedia/SocialMedia/template/feed/send_request_feed.html" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="21lvXaNjK41ceKqQvj4yF3gT9hG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="648382fd-0b55-464d-926b-7c336cb46e48" name="Changes" comment="" />
+      <created>1638528528893</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638528528893</updated>
+    </task>
+    <servers />
+  </component>
+</project>

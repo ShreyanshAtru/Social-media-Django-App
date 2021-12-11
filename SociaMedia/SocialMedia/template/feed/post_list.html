@@ -25,8 +25,8 @@
     {% for post in post_list %}
     <div class = "row justify-content-center mt-3">
         <div class="col-md-5 col-sm-12 border-bottom position-relative">
-           <p><strong> {{ post.author }}</strong>{{post.created_on}}</p>
-           <P>{{ post.body }}</P>
+           <p><a style="text-decoration: none" class="text-primary" href="{% url 'profile' post.author.my_profile.id  %}">@{{ post.author }}</a> {{ post.created_on }}</p>
+             <P>{{ post.body }}</P>
            <a href="{% url 'post-detail' post.pk %}" class="stretched-link"></a>
         </div>
    </div>

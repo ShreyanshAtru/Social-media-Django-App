@@ -1,0 +1,19 @@
+{% extends "feed/landing.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container">
+<div class = "row justify-content-center mt-3 col-md-12">
+    <div class="col-md-5 col-sm-12 border-bottom-12">
+        <h1>User List of Contify  Users :)</h1>
+        {% for friend in context %}
+        <form method="POST" action="{% url 'send_friend_request' user.id %}">
+            {% csrf_token %}
+            <p><strong>{{ friend.user }} {{ friend.user.id }}</strong> <a  href="send_friend_request/{{friend.user.id}}"  >
+                <button  class="btn btn-outline-success" type="submit">send request</button></a></p><br>
+        </form>
+        {% endfor %}
+    </div>
+</div>
+    </div>
+{% endblock content %}

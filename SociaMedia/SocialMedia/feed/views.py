@@ -1,22 +1,24 @@
+from django.contrib.auth.models import User
 from django.db.models import Q
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import View
 from .models import Post, Comment
 from .forms import PostForm, CommentForm
 from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
-from login.models import My_Profile
+from login.models import My_Profile, Friendship
+
+
 # Create your views here.
 
 
-class PostListView(View):
+class PostListView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
-        # import pdb
-        # pdb.set_trace()
         posts = Post.objects.all().order_by('-created_on')
         form = PostForm()
-        print(form)
+
         context = {
             'post_list': posts,
             'form': form,
@@ -88,25 +90,22 @@ class PostDeleteView(DeleteView):
 
 class ProfileView(View):
     def get(self, request, pk, *args, **kwargs):
-        # import pdb
-        # pdb.set_trace()
-        current_user = request.user
-        profile = My_Profile.objects.get(user = current_user)
-        print(profile)
+        profile = My_Profile.objects.get(id=pk)
         user = profile.user
         print(user)
         posts = Post.objects.filter(author=user).order_by('-created_on')
+        
         context = {
             'user': user,
             'profile': profile,
-            'posts': posts
+            'posts': posts,
         }
         return render(request, 'feed/profile.html', context)
 
 
 class ProfileEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = My_Profile
-    fields = ['name', 'bio', 'birth_date' ,'gender', 'image' ]
+    fields = ['name', 'bio', 'birth_date', 'gender', 'image']
     template_name = 'feed/profile_edit.html'
 
     def get_success_url(self):
@@ -115,10 +114,36 @@ class ProfileEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         pk = self.kwargs['pk']
-        profile = self.get_object(  )
+        profile = self.get_object()
         return self.request.user == profile.user
 
-def search(request): 
+
+def search(request):
     query = request.GET.get('query')
-    profile = My_Profile.objects.filter(Q(user__username__icontains=query))
-    return render(request , 'feed/search.html' , {'profile' : profile} )
+    profile = My_Profile.objects.filter(user__username__icontains=query)
+    return render(request, 'feed/search.html', {'profile': profile})
+
+
+def send_friend_request(request, pk):
+    # import pdb
+    # pdb.set_trace()
+    sender = request.user
+    receiver = User.objects.get(pk=pk)
+    friend_request, created = Friendship.objects.get_or_create(sender=sender, receiver=receiver , status= 'Sent')
+    if created:
+        context = My_Profile.objects.all()
+        return render(request , 'feed/send_request_feed.html' , {'context':context})
+    else:
+        context = My_Profile.objects.all()
+        return render(request , 'account/friends.html', {'context':context})
+
+
+def accept_friend_request(request, requestid):
+    import pdb
+    pdb.set_trace()
+    receiver = request.user
+    sender = User.objects.get(pk=requestid)
+    friend_request = Friendship.objects.get(sender=sender , receiver=receiver)
+    friend_request.status = 'Accepted'
+    friend_request.save()
+    return HttpResponse('friend request accepted')

@@ -1,0 +1,18 @@
+{% extends 'feed/landing.html' %}
+{% block content %}
+<h1>hello</h1>
+<div class = "row justify-content-center mt-3 col-md-12">
+    <div class="col-md-5 col-sm-12 border-bottom-12">
+        <p>hello</p>
+    <ul>
+        <strong>hello {{context}} ok</strong>
+    {% for user in context.user %}
+        {{ user }}
+        {% if user not in request.user.friends.all and user != request.user %}
+        <h1>{{user}} <a href="/send_friend_request/{{user.id}}">send friend request</a></h1>
+    {% endif %}
+    {% endfor %}
+    </ul>
+    </div>
+</div>
+{% endblock %}

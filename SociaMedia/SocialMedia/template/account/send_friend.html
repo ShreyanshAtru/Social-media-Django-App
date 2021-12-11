@@ -1,0 +1,25 @@
+{% extends 'feed/landing.html' %}
+{% block content %}
+<body>
+ <div class = "row justify-content-center mt-3 col-md-12">
+    <div class="col-md-5 col-sm-12 border-bottom-12">
+        <h1>hello {{friend_request.sender}}</h1>
+        <h2>{{friend_request.receiver.userid}}</h2>
+        {% for f in user %}
+        <form method= 'POST' action="">
+            {% csrf_token %}
+
+            <div class = "row justify-content-center mt-3 col-md-12">
+                <div class="col-md-5 col-sm-12 border-bottom-12">
+                    <li>
+                    <p> {{f.name}} <button class="btn btn-success mt-3"  href="send_friend_request/{{user.id}}"  >Add Friend</button></p>
+                    </li>
+                </div>
+            </div>
+
+        </form>
+        {% endfor %}
+    </div>
+ </div>
+</body>
+{% endblock %}
