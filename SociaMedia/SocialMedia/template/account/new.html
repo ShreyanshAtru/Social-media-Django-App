@@ -1,23 +1,10 @@
-{% extends 'account/header.html' %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% extends 'feed/landing.html' %}
 {% block content %}
-<body>
+
+<body class = "md-5">
     <h1>{{user}}</h1>
     <!-- <p>want to improve your profile click here <a href ="make_profile">Update profile</a></p> -->
-    <p>Show {{user}}profile  <a href ="/userview">show profile</a></p>
-    
-   
-
-        
-        <button class="btn btn-primary" type="submit">submit</button>
-    </form> -->
+    <p>All users of  this website  <a href ="/userview">show profile</a></p>
 </body>
-{% endblock %}
 </html>
+{% endblock %}

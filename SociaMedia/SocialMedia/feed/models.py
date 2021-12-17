@@ -12,7 +12,7 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    comment = models.TextField()
+    comment = models.TextField(blank=True, null=True)
     created_on = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey('Post', on_delete=models.CASCADE)

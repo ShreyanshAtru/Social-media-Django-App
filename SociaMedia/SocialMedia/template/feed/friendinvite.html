@@ -1,0 +1,72 @@
+{% extends 'feed/landing.html' %}
+
+{%block content%}
+
+<div class = "container">
+    <div class = "row  mt-5">
+        <div class="col-md-5 col-sm-6 ">
+          <a href="{% url 'post-list' %}">Back to the feed</a>
+        </div>
+   </div>
+
+
+    {% for friend in friends %}
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-5 col-sm-12 border-bottom position-relative">
+            {% if friend.sender == request.user  %}
+            <P><a style="text-decoration: none;" class="text-primary"
+                 href="{% url 'profile' friend.receiver.my_profile.id %}">@{{ friend.receiver.my_profile.id }} {{ friend.receiver }}</a></P>
+            {% if friend.receiver.my_profile.bio %}
+                <h5> {{friend.receiver.my_profile.bio}} </h5>
+
+            <div class="mb-3">
+
+                <form method="POST" action="{% url 'accept_friend_request' friend.receiver.id %}">
+                    {% csrf_token %}
+                     {{ friend.sender }}
+                    <button class="btn btn-outline-success" type="submit">Accept friend</button>
+                </form>
+
+            </div>
+
+          {% endif %}
+
+
+        </div>
+      </div>
+
+
+
+            {% else %}
+
+            <div class="row justify-content-center mt-3">
+            <div class="col-md-5 col-sm-12 border-bottom position-relative">
+                <P><a style="text-decoration: none;" class="text-primary"
+                 href="{% url 'profile' friend.sender.my_profile.id %}">@{{ friend.sender.my_profile.id }} {{ friend.sender }}</a></P>
+                <p>{{ friend.sender }}</p>
+            {% if friend.sender.my_profile.bio %}
+          <h5> {{friend.sender.my_profile.bio}} </h5>
+                {% endif %}
+                <div class="mb-3">
+
+                 <form method="POST" action="{% url 'accept_friend_request' friend.sender.id %}">
+                {% csrf_token %}
+                <button class="btn btn-outline-success" type="submit">Accept friend</button>
+            </form>
+
+            </div>
+
+
+
+
+  {% endif %}
+
+</div>
+</div>
+
+
+
+{% endfor %}
+</div>
+
+{% endblock %}

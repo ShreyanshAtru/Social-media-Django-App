@@ -1,5 +1,5 @@
 {% extends 'feed/landing.html' %}
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,32 +8,22 @@
   <title>Document</title>
 </head>
 <body>
-  <!-- <style>
-  .topnav a.active {
-    background-color: #04AA6D;
-    color: white; 
-}
-</style>
-<div class="topnav">
-  <a href="userview">User List</a>
-  <a href="logout_view">Logout </a>
-  <a href="/"> Home page </a>
-</div> -->
+
 
 {% block content %}
 
 <div class = "container">
   <div class = "row  mt-5">
       <div class="col-md-5 col-sm-6 ">
-        <a href="{% url 'post-list' %}">feed Back to the profile2</a>
+        <a href="{% url 'post-list' %}">back to the feed</a>
       </div>
  </div>
 
-  <body style="background-color:powderblue;"></body>
+  <body style="background-color:whitecream;"></body>
 
   <div class = "row justify-content-center mt-3 col-md-12">
     <div class="col-md-5 col-sm-12 border-bottom-12">
-      <h5><p>User of <b>Contify</b> social Network</p></h5>
+      <h5><p>Users of <b>Contify</b> social Network</p></h5>
     {% if list %}
       <ul>
         {% for l in list %}
@@ -41,8 +31,7 @@
           <img src="{{l.image.url}}" width="25" height="25" enctype = "multipart/form-data"/></p>
       
           <p>{{l.user}}      
-          {{l.gender}}   
-          {{l.Age}}   
+
         {% endfor %}
       </li>
     </ul>
@@ -52,13 +41,8 @@
     </div>
     </div>
 
-  <!-- <form method = "POST" action = ""></form>
-  {%csrf_token%}
-  h1 style="color: rgb(156, 110, 110);"> {{ form.username }}</h1>
-  {{form.image}}
-  {{form.gender}}
-  {{form.Age}} --> 
-</form>
+
+</div>
 {% endblock %}
 </body>
 </html>

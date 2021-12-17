@@ -43,11 +43,25 @@
         {% endif %}
 
         <div class="mb-3">
-
+            {% if user not in sender_lst and user not in receiver_lst %}
             <form method="POST" action="{% url 'send_friend_request' user.id %}">
-                {% csrf_token %}
-                <button class="btn btn-outline-success" type="submit">add friend</button>
+                {% if  user != request.user %}
+                    {% csrf_token %}
+                    <button class="btn btn-outline-success" type="submit">add friend</button>
+                {% endif %}
             </form>
+
+            {% endif %}
+
+            {% if user in sender_lst or user in receiver_lst %}
+
+            <form method="POST" action="{% url 'unfriend' user.id %}">
+                {% if  user != request.user %}
+                    {% csrf_token %}
+                    <button class="btn btn-outline-success" type="submit">Remove</button>
+                {% endif %}
+            </form>
+            {% endif %}
 
         </div>
 

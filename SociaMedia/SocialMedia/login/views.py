@@ -48,15 +48,9 @@ def login_request(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                # username = form.cleaned_data.get('username')
-                # user = User.objects.get(username=username)
-                # feed_profile = My_Profile(user=user)
-                # feed_profile.save()
-
                 current_user = request.user
                 print(current_user.id)
                 return render(request, 'account/new.html', {'user': current_user})
-
             else:
                 messages.error(request, "Invalid username or password.")
         else:
@@ -82,29 +76,3 @@ def userview(request):
 
 
 
-# @login_required
-# def send_friend_request(request, userid):
-#     """
-#
-#     :param new_friend: accepting user
-#     :param userid: new_friend id
-#     :param request:
-#     :param userid:
-#     :return:
-#     """
-#     import pdb
-#     pdb.set_trace()
-#     sender = request.user
-#     receiver = My_Profile.objects.get(pk=User.id)
-#     use = My_Profile.objects.all()
-#     friend_request, created = Friendship.objects.get_or_create(sender=sender, receiver=receiver)
-#     use.friend.add(receiver)
-#     if created:
-#         return HttpResponse('Already sent')
-#     else:
-#         return render(request, 'account/send_friend.html', {'friend_request': friend_request, 'use': use})
-#
-#
-# def friends(request):
-#     context = My_Profile.objects.all()
-#     return render(request, 'account/friends.html', {'context': context})

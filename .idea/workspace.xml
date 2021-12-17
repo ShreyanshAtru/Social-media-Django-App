@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="648382fd-0b55-464d-926b-7c336cb46e48" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/feed/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/feed/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/feed/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/feed/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/feed/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/feed/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/feed/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/feed/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/login/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/login/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/login/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/login/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/login/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/login/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/template/account/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/template/account/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/template/account/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/template/account/new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/template/account/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/template/account/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/template/feed/landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/template/feed/landing.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/template/feed/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/template/feed/navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/template/feed/post_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/template/feed/post_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SociaMedia/SocialMedia/template/feed/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/SociaMedia/SocialMedia/template/feed/profile.html" afterDir="false" />
@@ -27,6 +31,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -70,5 +80,16 @@
       <updated>1638528528893</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

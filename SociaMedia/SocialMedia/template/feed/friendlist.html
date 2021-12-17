@@ -1,0 +1,43 @@
+{% extends 'feed/landing.html' %}
+{%block content%}
+
+<div class = "container">
+     <div class = "row  mt-5">
+        <div class="col-md-5 col-sm-6 ">
+          <a href="{% url 'post-list' %}">Back to the feed</a>
+        </div>
+   </div>
+ {% for friend in friends %}
+<div class="row justify-content-center mt-1">
+    <div class="col-md-5 col-sm-12 border-bottom px-5 pt-3">
+        {% if friend.sender == request.user  %}
+         <P><a style="text-decoration: none;" class="text-primary" href="{% url 'profile' friend.receiver.my_profile.id %}">@{{ friend.receiver.my_profile.id }} {{ friend.receiver }}</a></P>
+            {% if friend.receiver.my_profile.bio %}
+             <img src="{{ friend.sender.my_profile.image.url }}" class="round-cricle" width="50" height="50" enctype = "multipart/form-data" />
+
+            <h3>{{ friend.receiver }}</h3>
+            <p> {{friend.receiver.my_profile.bio}} </p>
+            <a href="{% url 'unfriend'  friend.receiver.id %}"> <button class="btn btn-outline-success" type="submit">Unfriend </button> </a> </p>
+            {% endif %}
+
+
+
+        {% else %}
+             <img src="{{ friend.receiver.my_profile.image.url }}" class="round-cricle" width="50" height="50" enctype = "multipart/form-data" />
+            <P><a style="text-decoration: none;" class="text-primary"
+                  href="{% url 'profile' friend.sender.my_profile.id %}">@{{ friend.sender.my_profile.id }} {{ friend.sender }}</a></P>
+                    {% if friend.sender.my_profile.bio %}
+                    <h5> {{friend.sender.my_profile.bio}} </h5>
+        <p><h3>{{ friend.sender }}</h3> <a href="{% url 'unfriend' friend.sender.id %}"> <button class="btn btn-outline-success" type="submit">Unfriend </button> </a> </p>
+
+                    {% endif %}
+        {% endif %}
+        </div>
+    </div>
+
+
+
+
+{% endfor %}
+</div>
+{% endblock %}

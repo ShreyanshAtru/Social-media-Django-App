@@ -2,6 +2,8 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+
+
 <div class = "container">
 
     <div class = "row justify-content-center mt-3">
@@ -21,9 +23,9 @@
       </form>
         </div>
     </div>
-
+</div>
     {% for post in post_list %}
-    <div class = "row justify-content-center mt-3">
+    <div class = "row justify-content-center mt-3 mb-5">
         <div class="col-md-5 col-sm-12 border-bottom position-relative">
            <p><a style="text-decoration: none" class="text-primary" href="{% url 'profile' post.author.my_profile.id  %}">@{{ post.author }}</a> {{ post.created_on }}</p>
              <P>{{ post.body }}</P>
@@ -31,5 +33,4 @@
         </div>
    </div>
    {% endfor %}
-</div>
 {% endblock %}

@@ -1,10 +1,10 @@
 from django.urls import path
 from . import views
 from django.urls.resolvers import URLPattern
-from .views import PostListView, PostDetailView, PostEditView, PostDeleteView, ProfileEditView, ProfileView
+from .views import PostListView, PostDetailView, PostEditView, PostDeleteView, ProfileEditView,ProfileView
 from django.conf import settings
 from django.conf.urls.static import static
-
+from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('', PostListView.as_view(), name='post-list'),
     path('post/<int:pk>', PostDetailView.as_view(), name='post-detail'),
@@ -15,7 +15,11 @@ urlpatterns = [
     path('search', views.search, name='user-search'),
     path('send_friend_request/<int:pk>/', views.send_friend_request,name="send_friend_request"),
     path('accept_friend_request/<int:requestid>/', views.accept_friend_request,name="accept_friend_request"),
+    path('friend_list', views.friend_list, name='friends-list'),
+    path('friends_invites', views.friends_invites, name='friends-invites'),
+    #path('password/', PasswordsChangeView.as_view(template_name='feed/resetPass.html') , name='password/'),
+    path('unfriend/<int:userid>/',views.unfriend , name = 'unfriend'),
+    path('change_password', views.change_password , name='change_password'),
 ]
-
 if settings.DEBUG:
     urlpatterns == static(settings.MEDIA_URL, documents_root=settings.MEDIA_ROOT)
